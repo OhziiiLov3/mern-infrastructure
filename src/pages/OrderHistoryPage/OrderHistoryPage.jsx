@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const OrderHistoryPage = () => {
   return (
@@ -8,4 +8,4 @@ const OrderHistoryPage = () => {
   );
 }
 
-export default OrderHistoryPage
+export default OrderHistoryPage;

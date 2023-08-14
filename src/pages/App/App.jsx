@@ -1,23 +1,36 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
+import {Routes, Route} from 'react-router-dom'
 
 import './App.css'
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import AuthPage from '../AuthPage/AuthPage';
-// import {OrderHistoryPage} from '../OrderHistoryPage';
+import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import NavBar from '../../components/NavBar';
+import SignUpForm from '../../components/SignUpForm';
 
 function App() {
  const [user, setUser] = useState(null);
 
-  return (
-    <main className='App'>
-      {user ? 
-      <NewOrderPage/>
-      :
-      <AuthPage/>
-      }
 
+
+  return (
+    <main className="App">
+      {user ? (
+        <>
+        <NavBar/>
+          <Routes>
+            <Route path="/orders/new" element={<NewOrderPage />}></Route>
+            <Route path="/orders" element={<OrderHistoryPage />}></Route>
+          </Routes>
+        </>
+      ) : (
+        <>
+        <AuthPage />
+        <SignUpForm/>
+        </>
+      )}
     </main>
-  )
+  );
 }
 
 export default App

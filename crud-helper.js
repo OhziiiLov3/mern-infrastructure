@@ -8,5 +8,5 @@ require('./config/database');
 // const Order = require('./models/order');
 
 
-let user, item, category, order;
-let users, items, categories, orders;
+// let user, item, category, order;
+// let users, items, categories, orders;
